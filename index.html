@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #eaeaea;
+            background-color: #121212;
+        }
+
+        a {
+            text-decoration: none;
+            color: #eaeaea;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #0078d7;
+        }
+
+        section {
+            padding: 4rem 2rem;
+            scroll-margin-top: 80px;
+        }
+
+        .navbar {
+            background-color: #1f1f1f;
+        }
+
+        .navbar-brand, .nav-link {
+            color: #eaeaea !important;
+        }
+
+        .nav-link.active {
+            color: #0078d7 !important;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('hero-bg.jpg') center/cover no-repeat;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background-color: #0078d7;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #005bb5;
+        }
+
+        .about, .contact {
+            background-color: #1f1f1f;
+        }
+
+        .skills .card {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #1f1f1f;
+            color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container text-center">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm a Web Developer passionate about creating beautiful and functional websites.</p>
+            <button id="downloadResume" class="btn btn-primary">Download My Resume</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about text-center">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hello! I'm a web developer with a passion for building user-friendly and visually appealing websites. I specialize in front-end development but also have experience in back-end technologies.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container text-center">
+            <h2>My Skills</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card p-3 mb-3">HTML</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 mb-3">CSS</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 mb-3">JavaScript</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 mb-3">React</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 mb-3">Node.js</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3 mb-3">Python</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact text-center">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('downloadResume').addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.href = 'resume.pdf'; // Replace with the actual path to your resume file
+            link.download = 'My_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
